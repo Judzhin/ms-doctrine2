@@ -73,13 +73,7 @@ $paths = array(APPLICATION_PATH . DS . "Entity");
 
 $isDevMode = true;
 
-$dbParams = array(
-    'host' => 'msbios.mysql.ukraine.com.ua',
-    'driver' => 'pdo_mysql',
-    'user' => 'msbios_doctrine',
-    'password' => 't8wn27yv',
-    'dbname' => 'msbios_doctrine'
-);
+$dbParams = require '../config.local.php';
 
 $config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
 $entityManager = EntityManager::create($dbParams, $config);
